@@ -1,0 +1,32 @@
+.listTitleDiv{
+   display: flex;
+   align-items: center;
+}
+
+ul{
+   list-style: none;
+}
+
+.titleDiv{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+.checkbox{
+   width: 15px;
+   height: 15px;
+}
+.updateBtn{
+   background: cornflowerblue;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 14px;
+    color: aliceblue;
+}
+p{
+   padding-left: 35px;
+}
+mat-icon:hover{
+   background-color: rgb(161, 161, 161);
+   border-radius: 13px;
+}

@@ -1,0 +1,32 @@
+<ng-content></ng-content>
+<ul>
+  <li *ngFor="let activeTaskObj of activeTasks">
+    <div class="titleDiv">
+      <mat-icon class="mat-icon-rtl-mirror" (click)="activeTaskObj.display = !activeTaskObj.display">
+        {{activeTaskObj.display ?  'expand_more' :'chevron_right'}}
+      </mat-icon>
+      {{ activeTaskObj.date.getDate()}}/{{ activeTaskObj.date.getMonth()}}/{{ activeTaskObj.date.getFullYear()}}
+    </div>
+    <div>
+      <ul *ngIf="activeTaskObj.display">
+        <ngx-sortable *ngFor="let task of activeTaskObj.children">
+          <div class="titleDiv">
+            <mat-icon class="mat-icon-rtl-mirror" (click)="task.display = !task.display">
+              {{task.display ?  'expand_more' :'chevron_right'}}
+            </mat-icon>
+            {{task.title}}<input type="checkbox" class="checkbox">
+          </div>
+          <div *ngIf="task.display">
+            <p>Details: </p>
+            <p>{{task.detail}}</p>
+            <button class="updateBtn">Update</button>
+          </div>          
+          
+        </ngx-sortable>
+      </ul>
+    </div>
+  </li>
+</ul>
+<!-- <p>
+    Incomplete Tasks: {{ActiveTasks.length-tasks.selectedOptions.selected.length}}
+</p> -->
